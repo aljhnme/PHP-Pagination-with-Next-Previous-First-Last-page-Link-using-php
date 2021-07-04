@@ -1,5 +1,5 @@
 <?php
  
- $connect=new mysqli("localhost","root","","testing");
+ $connect=new mysqli("localhost","root","","pagination");
 
 ?>
