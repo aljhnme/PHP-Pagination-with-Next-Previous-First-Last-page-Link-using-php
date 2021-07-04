@@ -37,7 +37,7 @@
      }else{
         $st_page=5;
      }
-      $sql="SELECT * FROM `tbl_student` 
+      $sql="SELECT * FROM `name_stu` 
             limit $st_page,$r_p_page";
 
      $result=$connect->query($sql);
@@ -56,7 +56,7 @@
     <div align="center">
     <br />
     <?php
-     $sql="SELECT * FROM `tbl_student`";
+     $sql="SELECT * FROM `name_stu`";
      $countall=$connect->query($sql);
      $rowcount=mysqli_num_rows($countall);
      
@@ -77,20 +77,20 @@
 
      if ($st_page > 5) 
      {
-        echo "<a href='p.php?values=5'>First</a>";
-        echo "<a href='p.php?values=".($st_page-5)."'><<</a>"; 
+        echo "<a href='pagination.php?values=5'>First</a>";
+        echo "<a href='pagination.php?values=".($st_page-5)."'><<</a>"; 
      }
 
     for ($i=$start_loop;$i < $end_loop; $i++) 
      { 
         $hide_values=$i*5;
-        echo "<a href='p.php?values=".$hide_values."'>".ceil($i)."</a>";
+        echo "<a href='pagination.php?values=".$hide_values."'>".ceil($i)."</a>";
      }
 
    if ($__page-1 != $start_loop) 
       {
-        echo "<a href='p.php?values=".($st_page+5)."'>>></a>";
-        echo "<a href='p.php?values=".$last_val."'>Last</a>";
+        echo "<a href='pagination.php?values=".($st_page+5)."'>>></a>";
+        echo "<a href='pagination.php?values=".$last_val."'>Last</a>";
       }
     ?>
     </div>
